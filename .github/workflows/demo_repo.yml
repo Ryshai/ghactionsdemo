@@ -1,4 +1,4 @@
-name: Demo Github Actions
+name: Checkout and Investigate Repo
 on: workflow_dispatch
 
 jobs:
