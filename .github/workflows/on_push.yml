@@ -1,5 +1,5 @@
 name: GitHub Actions On Push
-on: Push
+on: push
 
 jobs: 
   on-push-job:
@@ -7,6 +7,6 @@ jobs:
 
     steps:
       - name: First Step
-        run:
+        run: |
           echo "This is a step within a job within a workflow"
           ls -lart
