@@ -2,7 +2,7 @@ name: Clone website w Podman
 on: workflow_dispatch
 
 jobs:
-  clone-website-and-run-podman:
+  clone-website-and-test-service:
     runs-on: ubuntu-latest
 
 
@@ -20,3 +20,11 @@ jobs:
       - name: Test web service 
         run: python3 -c "import requests; r=requests.get(http://localhost:8080');print(r.status_code)"
         #curl localhost:80
+
+  testing-api-availability:
+    needs: [clone-website-and-test-service]
+    runs-on: ubuntu-latest
+
+  steps: 
+    - name: Ping The Service
+      run: ping 8.8.8.8 -n 20
