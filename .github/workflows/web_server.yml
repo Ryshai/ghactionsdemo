@@ -26,5 +26,5 @@ jobs:
     runs-on: ubuntu-latest
 
   steps: 
-    - name: Ping The Service
+    - name: Ping
       run: ping 8.8.8.8 -n 20

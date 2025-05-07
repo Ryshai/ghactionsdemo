@@ -1,0 +1,12 @@
+name: Expansion amd Other Features
+on: workflow_dispatch
+
+jobs:
+  show-meta-data-of-system:
+    runs_on: ubuntu-latest
+
+    steps:
+      - name: Get GitHub Context 
+        run: echo "${{ github }}"
+      - name: Get Github Context
+        run: echo "${{ toJSON( github ) }}"
