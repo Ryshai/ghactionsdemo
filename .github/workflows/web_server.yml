@@ -11,9 +11,12 @@ jobs:
         run: git clone https://github.com/Ryshai/Webdevpro
       - name: Check Website Files
         run: ls -lart /usr/share/nginx/html
-      - name: Move Website Files
-        run: sudo mv./Webdevpro/* /usr/share/nginx/html
+      - name: Start And Enable
+        run: |
+          sudo systemctl enable nginx
+          sudo systemctl start nginx 
       - name: Start nginx service
         run: sudo systemctl start nginx
       - name: Test web service 
-        run: python3 -c "import requests; r=requests.get(http://localhost:8080');print(r.status_code)"
+        run: curl localhost:8080
+        #python3 -c "import requests; r=requests.get(http://localhost:8080');print(r.status_code)"
