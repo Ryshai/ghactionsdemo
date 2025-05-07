@@ -18,5 +18,5 @@ jobs:
       - name: Start nginx service
         run: sudo systemctl start nginx
       - name: Test web service 
-        run: curl localhost:80
-        #python3 -c "import requests; r=requests.get(http://localhost:8080');print(r.status_code)"
+        run: python3 -c "import requests; r=requests.get(http://localhost:8080');print(r.status_code)"
+        #curl localhost:80
