@@ -1,4 +1,4 @@
-name: GitHub Actions On Push 
+name: Clone website w Podman
 on: workflow_dispatch
 
 jobs:
